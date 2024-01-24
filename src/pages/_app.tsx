@@ -2,7 +2,7 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { FC } from 'react';
 import { AppBar } from '../components/AppBar';
-// import {Footer} from "../components/Footer";
+import { Footer } from '../components/Footer';
 import Notifications from '../components/Notification';
 // import { ContextProvider } from '../contexts/ContextProvider';
 import { ContextProvider } from '../contexts/ContextProvider';
@@ -20,6 +20,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
             <Notifications />
             <AppBar />
             <Component {...pageProps} />
+            <Footer />
          </ContextProvider>
 
          {/* // script */}
