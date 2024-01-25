@@ -32,7 +32,7 @@ export const HomeView: FC = ({ setOpenCreateModal }) => {
                               <a
                                  onClick={() => setOpenCreateModal(true)}
                                  className="hover:bg-primary-hover group
-                                  mt-10 inline-flex items-center justify-center gap-2 rounded-full border border-white/10 px-1 text-white transition-all duration-500"
+                                  mt-10 inline-flex items-center justify-center gap-2 rounded-full border border-white/10 px-1 py-1 text-white transition-all duration-300"
                               >
                                  <span className="bg-primary/20 text-primary me-2 flex h-11 w-11 items-center justify-center rounded-full group-hover:bg-white/10 group-hover:text-white">
                                     <i data-lucide="image">
@@ -44,6 +44,85 @@ export const HomeView: FC = ({ setOpenCreateModal }) => {
                               <a className="mt-8">
                                  <WalletMultiButton />
                               </a>
+                           </div>
+                        </div>
+                        <div className="mx-auto h-[595px] overflow-hidden">
+                           <div className="marquee grid grid-cols-2 gap-6">
+                              <div className="relative m-auto flex flex-col gap-6 overflow-hidden">
+                                 <div className="marquee-hero flex min-h-full flex-shrink-0 flex-col items-center justify-around gap-6">
+                                    {[
+                                       'img-9',
+                                       'img-14',
+                                       'img-21',
+                                       'img-22',
+                                       'img-10',
+                                    ].map((image, index) => (
+                                       <img
+                                          key={index}
+                                          src={`assets/images/ai/${image}.jpg`}
+                                          alt=""
+                                          className="aspect-1 h-full w-60 rounded-xl object-cover"
+                                       />
+                                    ))}
+                                 </div>
+                                 <div
+                                    aria-hidden="true"
+                                    className="marquee-hero flex min-h-full flex-shrink-0 flex-col items-center justify-around gap-6"
+                                 >
+                                    {[
+                                       'img-9',
+                                       'img-14',
+                                       'img-21',
+                                       'img-22',
+                                       'img-10',
+                                    ].map((image, index) => (
+                                       <img
+                                          key={index}
+                                          src={`assets/images/ai/${image}.jpg`}
+                                          alt=""
+                                          className="aspect-1 h-full w-60 rounded-xl object-cover"
+                                       />
+                                    ))}
+                                 </div>
+                              </div>
+                              <div className="marquee-reverse m-auto flex flex-col gap-6 overflow-hidden">
+                                 <div className="marquee-hero flex min-h-full flex-shrink-0 flex-col items-center justify-around gap-6">
+                                    {[
+                                       'img-6',
+                                       'img-10',
+                                       'img-11',
+                                       'img-12',
+                                       'img-13',
+                                    ].map((image, index) => (
+                                       <img
+                                          key={index}
+                                          src={`assets/images/ai/${image}.jpg`}
+                                          alt=""
+                                          className="aspect-1 h-full w-60 rounded-xl object-cover"
+                                       />
+                                    ))}
+                                 </div>
+
+                                 <div
+                                    arial-hidden="true"
+                                    className="marquee-hero flex min-h-full flex-shrink-0 flex-col items-center justify-around gap-6"
+                                 >
+                                    {[
+                                       'img-6',
+                                       'img-10',
+                                       'img-11',
+                                       'img-12',
+                                       'img-13',
+                                    ].map((image, index) => (
+                                       <img
+                                          key={index}
+                                          src={`assets/images/ai/${image}.jpg`}
+                                          alt=""
+                                          className="aspect-1 h-full w-60 rounded-xl object-cover"
+                                       />
+                                    ))}
+                                 </div>
+                              </div>
                            </div>
                         </div>
                      </div>

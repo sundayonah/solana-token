@@ -1,6 +1,6 @@
 export { HomeView } from './home';
-// export { ToolView } from './tool';
-// export { FeatureView } from './feature';
+export { ToolView } from './tools';
+export { FeatureView } from './feature';
 // export { OfferView } from './offer';
 // export { FaqView } from './faq';
 // export { AirdropView } from './airdrop';

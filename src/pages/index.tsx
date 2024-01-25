@@ -10,10 +10,10 @@ import {
    //  CreateView,
    //  DonateView,
    //  FaqView,
-   //  FeatureView,
+   FeatureView,
    //  InputView,
    //  OfferView,
-   //  ToolView,
+   ToolView,
 } from '../views';
 
 const Home: NextPage = (props) => {
@@ -34,14 +34,13 @@ const Home: NextPage = (props) => {
          </Head>
 
          <HomeView setOpenCreateModal={setOpenCreateModal} />
-         {/* <ToolView
+         <ToolView
             setOpenAirdrop={setOpenAirDrop}
             setOpenContract={setOpenContract}
             setOpenCreateModal={setOpenCreateModal}
             setOpenSendTransaction={setOpenSendTransaction}
             setOpenTokenMetadata={setOpenTokenMetadata}
          />
-
          <FeatureView
             setOpenAirdrop={setOpenAirDrop}
             setOpenContract={setOpenContract}
@@ -49,6 +48,7 @@ const Home: NextPage = (props) => {
             setOpenSendTransaction={setOpenSendTransaction}
             setOpenTokenMetadata={setOpenTokenMetadata}
          />
+         {/*
 
          <OfferView />
          <FaqView />
