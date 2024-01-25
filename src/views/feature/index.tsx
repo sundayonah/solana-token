@@ -1,10 +1,18 @@
-import React, { FC } from 'react';
+import React, { Dispatch, FC, SetStateAction } from 'react';
 import { LuArrowRightFromLine } from 'react-icons/lu';
 import { MdGeneratingTokens, MdToken } from 'react-icons/md';
 import { RiTokenSwapFill } from 'react-icons/ri';
 import { RxTokens } from 'react-icons/rx';
 
-export const FeatureView: FC = ({
+interface FeatureViewProps {
+   setOpenAirdrop: Dispatch<SetStateAction<boolean>>;
+   setOpenContract: Dispatch<SetStateAction<boolean>>;
+   setOpenCreateModal: Dispatch<SetStateAction<boolean>>;
+   setOpenSendTransaction: Dispatch<SetStateAction<boolean>>;
+   setOpenTokenMetadata: Dispatch<SetStateAction<boolean>>;
+}
+
+export const FeatureView: FC<FeatureViewProps> = ({
    setOpenAirdrop,
    setOpenContract,
    setOpenCreateModal,

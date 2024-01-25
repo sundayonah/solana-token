@@ -1,9 +1,17 @@
-import React, { FC } from 'react';
+import React, { Dispatch, FC, SetStateAction } from 'react';
 import { MdGeneratingTokens } from 'react-icons/md';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import { LuArrowRightFromLine } from 'react-icons/lu';
 
-export const ToolView: FC = ({
+interface ToolViewProps {
+   setOpenAirdrop: Dispatch<SetStateAction<boolean>>;
+   setOpenContract: Dispatch<SetStateAction<boolean>>;
+   setOpenCreateModal: Dispatch<SetStateAction<boolean>>;
+   setOpenSendTransaction: Dispatch<SetStateAction<boolean>>;
+   setOpenTokenMetadata: Dispatch<SetStateAction<boolean>>;
+}
+
+export const ToolView: FC<ToolViewProps> = ({
    setOpenAirdrop,
    setOpenContract,
    setOpenCreateModal,
@@ -118,7 +126,7 @@ export const ToolView: FC = ({
                ))}
             </div>
             <div className="mt-10 flex justify-center">
-               <a className="hover:bg-primary-hover bg-primary inline-flex items-center justify-center gap-2 rounded-full px-6 py-2 text-white transition-all duration-300">
+               <a className="hover:bg-primary-hover bg-primary inline-flex items-center justify-center gap-2 rounded-full px-6 py-2 text-white transition-all dura">
                   More Tools
                   <i>
                      <IoIosArrowRoundForward />

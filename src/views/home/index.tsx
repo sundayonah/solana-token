@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { Dispatch, FC, SetStateAction } from 'react';
 import { MdGeneratingTokens } from 'react-icons/md';
 import {
    WalletConnectButton,
@@ -7,7 +7,11 @@ import {
 
 import pkg from '../../../package.json';
 
-export const HomeView: FC = ({ setOpenCreateModal }) => {
+interface HomeViewProps {
+   setOpenCreateModal: Dispatch<SetStateAction<boolean>>; // Define the prop in the interface
+}
+
+export const HomeView: FC<HomeViewProps> = ({ setOpenCreateModal }) => {
    return (
       <section id="home" className="relative overflow-hidden pb-20 pt-[72px]">
          <div className="px-6 py-4">
