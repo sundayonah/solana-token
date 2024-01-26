@@ -7,12 +7,12 @@ import {
    //  TokenMetadata,
    //  AirdropView,
    //  ContactView,
-   //  CreateView,
+   CreateView,
    //  DonateView,
-   //  FaqView,
+   FaqView,
    FeatureView,
    //  InputView,
-   //  OfferView,
+   OfferView,
    ToolView,
 } from '../views';
 
@@ -48,18 +48,16 @@ const Home: NextPage = (props) => {
             setOpenSendTransaction={setOpenSendTransaction}
             setOpenTokenMetadata={setOpenTokenMetadata}
          />
-         {/*
 
          <OfferView />
          <FaqView />
 
-
-         {openCreateModal && (
+         {!openCreateModal && (
             <div className="new_loader relative h-full bg-slate-900">
                <CreateView setOpenCreateModal={setOpenCreateModal} />
             </div>
          )}
-
+         {/*
          {openTokenMetadata && (
             <div className="new_loader relative h-full bg-slate-900">
                <TokenMetadata setOpenTokenMetadata={setOpenTokenMetadata} />
