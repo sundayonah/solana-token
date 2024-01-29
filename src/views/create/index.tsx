@@ -59,12 +59,6 @@ export const CreateView: FC<CreateViewProps> = ({ setOpenCreateModal }) => {
       description: '',
    });
 
-   // const handleFormFieldChange = (fieldName, e) => {
-   //    console.log('fieldName:', fieldName);
-   //    console.log('e:', e);
-   //    setToken({ ...token, [fieldName]: e.target.value });
-   // };
-
    const handleFormFieldChange = (fieldName, value) => {
       console.log('fieldName:', fieldName);
       console.log('value:', value);
