@@ -32,18 +32,18 @@ export const HomeView: FC<HomeViewProps> = ({ setOpenCreateModal }) => {
                               Launch your solana token, All in one solana token
                               development and deployment.
                            </p>
-                           <div className="new_add_css">
+                           <div className="new_add_css cursor-pointer">
                               <a
                                  onClick={() => setOpenCreateModal(true)}
                                  className="hover:bg-primary-hover group
-                                  mt-10 inline-flex items-center justify-center gap-2 rounded-full border border-white/10 px-1 py-1 text-white transition-all duration-300"
+                                  mt-10 inline-flex items-center justify-center gap-2 rounded-full border border-white/10 px-2 py-1 text-white transition-all duration-300"
                               >
                                  <span className="bg-primary/20 text-primary me-2 flex h-11 w-11 items-center justify-center rounded-full group-hover:bg-white/10 group-hover:text-white">
                                     <i data-lucide="image">
                                        <MdGeneratingTokens />
                                     </i>
                                  </span>
-                                 Create
+                                 Create Token
                               </a>
                               <a className="mt-8">
                                  <WalletMultiButton />
