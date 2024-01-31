@@ -4,11 +4,11 @@ import Head from 'next/head';
 
 import {
    HomeView,
-   //  TokenMetadata,
-   //  AirdropView,
-   //  ContactView,
+   TokenMetadata,
+   AirdropView,
+   ContactView,
    CreateView,
-   //  DonateView,
+   DonateView,
    FaqView,
    FeatureView,
    //  InputView,
@@ -57,7 +57,6 @@ const Home: NextPage = (props) => {
                <CreateView setOpenCreateModal={setOpenCreateModal} />
             </div>
          )}
-         {/*
          {openTokenMetadata && (
             <div className="new_loader relative h-full bg-slate-900">
                <TokenMetadata setOpenTokenMetadata={setOpenTokenMetadata} />
@@ -80,7 +79,7 @@ const Home: NextPage = (props) => {
             <div className="new_loader relative h-full bg-slate-900">
                <DonateView setOpen={setOpenSendTransaction} />
             </div>
-         )} */}
+         )}
       </>
    );
 };

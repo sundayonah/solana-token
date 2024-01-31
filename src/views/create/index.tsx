@@ -60,8 +60,8 @@ export const CreateView: FC<CreateViewProps> = ({ setOpenCreateModal }) => {
    });
 
    const handleFormFieldChange = (fieldName, value) => {
-      console.log('fieldName:', fieldName);
-      console.log('value:', value);
+      // console.log('fieldName:', fieldName);
+      // console.log('value:', value);
 
       setToken({ ...token, [fieldName]: value });
    };
@@ -69,13 +69,13 @@ export const CreateView: FC<CreateViewProps> = ({ setOpenCreateModal }) => {
    // createToken
    const createToken = useCallback(
       async (token) => {
-         setIsLoading(true);
+         // setIsLoading(true);
          const lamports = await getMinimumBalanceForRentExemptMint(connection);
          const mintKeypair = Keypair.generate();
          console.log(lamports);
          console.log(mintKeypair.publicKey);
-         console.log('mintKeypair:', mintKeypair);
-         console.log('publicKey:', publicKey);
+         // console.log('mintKeypair:', mintKeypair);
+         // console.log('publicKey:', publicKey);
          const tokenATA = await getAssociatedTokenAddress(
             mintKeypair.publicKey,
             publicKey
@@ -165,7 +165,7 @@ export const CreateView: FC<CreateViewProps> = ({ setOpenCreateModal }) => {
                message: 'Token Creation failed, try later.',
             });
          }
-         setIsLoading(false);
+         // setIsLoading(false);
       },
       [publicKey, connection, sendTransaction]
    );
@@ -173,9 +173,11 @@ export const CreateView: FC<CreateViewProps> = ({ setOpenCreateModal }) => {
    // image upload to ipfs
    const handleImageChange = async (event) => {
       const file = event.target.files[0];
+      console.log(file);
 
       if (file) {
          const imgUrl = await uploadImageToPinata(file);
+         console.log(imgUrl);
          setToken({ ...token, image: imgUrl });
       }
    };
@@ -215,10 +217,12 @@ export const CreateView: FC<CreateViewProps> = ({ setOpenCreateModal }) => {
       const { name, symbol, description, image } = token;
 
       if (!name || !symbol || !description || !image) {
-         return notify({
+         notify({
             type: 'error',
             message: 'Data is missing',
          });
+         setIsLoading(false);
+         return 'hello';
       }
 
       const data = JSON.stringify({
@@ -239,6 +243,7 @@ export const CreateView: FC<CreateViewProps> = ({ setOpenCreateModal }) => {
                'Content-Type': 'application/json',
             },
          });
+         console.log(response);
 
          const url = `https://gateway.pinata.cloud/ipfs/${response.data.IpfsHash}`;
          console.log(url);
@@ -247,12 +252,13 @@ export const CreateView: FC<CreateViewProps> = ({ setOpenCreateModal }) => {
          notify({ type: 'error', message: 'Upload to pinnata Json failed' });
       }
       setIsLoading(false);
+      return 'how are you?';
    };
 
    return (
       <>
          {isLoading && (
-            <div className="absolute top-0 left-0 z-50 flex h-screen w-full items-center justify-center bg-black/[.3] backdrop-blur-[10px]">
+            <div className="absolute top-0 left-0 z-50 flex h-screen w-full items-center justify-center bg-white/[.2] backdrop-blur-[10px]">
                <ClipLoader />
             </div>
          )}
@@ -356,7 +362,7 @@ export const CreateView: FC<CreateViewProps> = ({ setOpenCreateModal }) => {
                                        onClick={() => setOpenCreateModal(false)}
                                        className="group inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-2xl transition-all duration-500 hover:bg-blue-600/60"
                                     >
-                                       <i className="text-2xl text-white group-hover:text-white cursor-pointer">
+                                       <i className="text-2xl text-whitehttps://gateway.pinata.cloud/ipfs/QmaMffAs4Vk2SGu8yLZDuR8TPJpk8UEbYhpZ5BCj6pmteJ group-hover:text-white cursor-pointer">
                                           <AiOutlineClose />
                                        </i>
                                     </a>
@@ -408,7 +414,7 @@ export const CreateView: FC<CreateViewProps> = ({ setOpenCreateModal }) => {
                                  />
                               </div>
                               <div className="mt-5 w-full text-center">
-                                 <p className="text-default-300 text-base font-medium leading-6">
+                                 <div className="text-default-300 text-base font-medium leading-6">
                                     <InputView
                                        name={'Token Address'}
                                        placeholder={tokenMintAddress}
@@ -423,7 +429,7 @@ export const CreateView: FC<CreateViewProps> = ({ setOpenCreateModal }) => {
                                     >
                                        Copy
                                     </span>
-                                 </p>
+                                 </div>
 
                                  <div className="mb-6 text-center">
                                     <a
@@ -436,6 +442,23 @@ export const CreateView: FC<CreateViewProps> = ({ setOpenCreateModal }) => {
                                           View on Solana
                                        </span>
                                     </a>
+                                 </div>
+
+                                 <div className="text-center ">
+                                    <ul className="flex flex-wrap items-center justify-center gap-2 ">
+                                       <li>
+                                          <a
+                                             onClick={() =>
+                                                setOpenCreateModal(false)
+                                             }
+                                             className="group inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-2xl transition-all duration-500 hover:bg-blue-600/60"
+                                          >
+                                             <i className="text-2xl text-white group-hover:text-white cursor-pointer">
+                                                <AiOutlineClose />
+                                             </i>
+                                          </a>
+                                       </li>
+                                    </ul>
                                  </div>
                               </div>
                            </div>

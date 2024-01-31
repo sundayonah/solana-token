@@ -1,7 +1,7 @@
 import React, { ChangeEvent, Dispatch, FC, SetStateAction } from 'react';
 
 interface InputViewProps {
-   name: string; // Change the type to string
+   name: string;
    placeholder: string;
    clickhandle?: Dispatch<SetStateAction<string>>;
 }

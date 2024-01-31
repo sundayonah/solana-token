@@ -21,12 +21,11 @@ const NetworkSwitcher: FC = () => {
                className="select max-w-xs border-none bg-transparent outline-0"
             >
                <option value="mainnet-beta">main</option>
-               <option value="devnet">dev</option>
+               <option value="devnet">devnet</option>
                <option value="testnet">test</option>
             </select>
          </label>
       </>
    );
 };
-
 export default dynamic(() => Promise.resolve(NetworkSwitcher), { ssr: false });

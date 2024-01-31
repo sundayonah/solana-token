@@ -15,6 +15,5 @@ export default function useQueryContext() {
       }
       return url;
    };
-
    return UrlWithCluster;
 }
